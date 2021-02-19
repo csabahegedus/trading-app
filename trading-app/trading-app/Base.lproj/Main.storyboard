@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mF2-0K-d0E">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--List Controller-->
+        <scene sceneID="Qvv-RE-7ZX">
+            <objects>
+                <tableViewController storyboardIdentifier="List Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3z6-nH-HDY" customClass="ListController" customModule="trading_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XAH-kr-K12">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StockTableViewCell" id="wfh-q4-Kea" customClass="StockTableViewCell" customModule="trading_app" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wfh-q4-Kea" id="l18-pG-nVo">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFI-ac-uV5">
+                                            <rect key="frame" x="20" y="11" width="374" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="gFI-ac-uV5" secondAttribute="bottom" id="3pP-iZ-ha1"/>
+                                        <constraint firstItem="gFI-ac-uV5" firstAttribute="top" secondItem="l18-pG-nVo" secondAttribute="topMargin" id="ECf-Ow-bCz"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gFI-ac-uV5" secondAttribute="trailing" id="GCq-og-R8P"/>
+                                        <constraint firstItem="gFI-ac-uV5" firstAttribute="leading" secondItem="l18-pG-nVo" secondAttribute="leadingMargin" id="c6O-N3-fD9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="gFI-ac-uV5" id="80l-l9-inG"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3z6-nH-HDY" id="cbE-9S-lvC"/>
+                            <outlet property="delegate" destination="3z6-nH-HDY" id="Fhz-2c-rA1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="n1H-eG-IKi"/>
+                    <connections>
+                        <outlet property="tableView" destination="XAH-kr-K12" id="pr3-0z-9Zz"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iib-5g-uaO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-445" y="-259"/>
+        </scene>
+        <!--Stock View Controller-->
+        <scene sceneID="6iV-XG-v5u">
+            <objects>
+                <viewController storyboardIdentifier="StockViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0ch-kq-FhL" customClass="StockViewController" customModule="trading_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WiI-yP-pQF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xec-wN-75G" userLabel="logoImageView">
+                                <rect key="frame" x="40" y="164" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="1OQ-fJ-eIV"/>
+                                    <constraint firstAttribute="height" constant="150" id="1tk-rp-Bbb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDX-lF-UOv" userLabel="nameLabel">
+                                <rect key="frame" x="210" y="191" width="164" height="20.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bod-V4-4eV" userLabel="priceLabel">
+                                <rect key="frame" x="210" y="271.5" width="164" height="20.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEw-8Y-fqV" userLabel="closeButton">
+                                <rect key="frame" x="120" y="618" width="174" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="scz-H1-HY2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9VR-Xa-SOf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bod-V4-4eV" firstAttribute="leading" secondItem="Xec-wN-75G" secondAttribute="trailing" constant="20" id="15F-5O-UoU"/>
+                            <constraint firstItem="Xec-wN-75G" firstAttribute="top" secondItem="9VR-Xa-SOf" secondAttribute="top" constant="120" id="5dX-ov-0dm"/>
+                            <constraint firstItem="9VR-Xa-SOf" firstAttribute="trailing" secondItem="NDX-lF-UOv" secondAttribute="trailing" constant="40" id="KzD-cN-oo0"/>
+                            <constraint firstItem="NDX-lF-UOv" firstAttribute="top" secondItem="Xec-wN-75G" secondAttribute="top" constant="27" id="Lgi-yv-7s4"/>
+                            <constraint firstItem="DEw-8Y-fqV" firstAttribute="leading" secondItem="9VR-Xa-SOf" secondAttribute="leading" constant="120" id="OVh-Kh-biY"/>
+                            <constraint firstItem="9VR-Xa-SOf" firstAttribute="bottom" secondItem="DEw-8Y-fqV" secondAttribute="bottom" constant="200" id="ld4-GW-FdP"/>
+                            <constraint firstItem="Xec-wN-75G" firstAttribute="leading" secondItem="9VR-Xa-SOf" secondAttribute="leading" constant="40" id="pCv-Zs-KWm"/>
+                            <constraint firstItem="NDX-lF-UOv" firstAttribute="bottom" secondItem="Bod-V4-4eV" secondAttribute="top" constant="-60" id="ruI-kj-vY4"/>
+                            <constraint firstItem="9VR-Xa-SOf" firstAttribute="trailing" secondItem="DEw-8Y-fqV" secondAttribute="trailing" constant="120" id="sNb-hK-Sh3"/>
+                            <constraint firstItem="NDX-lF-UOv" firstAttribute="leading" secondItem="Xec-wN-75G" secondAttribute="trailing" constant="20" id="xjQ-Hq-9gc"/>
+                            <constraint firstItem="9VR-Xa-SOf" firstAttribute="trailing" secondItem="Bod-V4-4eV" secondAttribute="trailing" constant="40" id="yEI-2y-FYO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="DEw-8Y-fqV" id="HQS-Ei-9IZ"/>
+                        <outlet property="logoImageView" destination="Xec-wN-75G" id="eNw-JF-aMg"/>
+                        <outlet property="nameLabel" destination="NDX-lF-UOv" id="Pt3-Kz-0zA"/>
+                        <outlet property="priceLabel" destination="Bod-V4-4eV" id="O8D-mC-6pV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="abY-hq-aMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476.81159420289856" y="-258.48214285714283"/>
+        </scene>
+        <!--Custom Navigation Controller-->
+        <scene sceneID="F3J-ll-wKS">
+            <objects>
+                <navigationController storyboardIdentifier="Custom Navigation Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mF2-0K-d0E" customClass="CustomNavigationController" customModule="trading_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jZB-SD-lK0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3z6-nH-HDY" kind="relationship" relationship="rootViewController" id="oyq-WX-k6K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ZL-5I-WSJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1335" y="-259"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
