@@ -16,12 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
     
-    public class var sceneDelegate: SceneDelegate{
+    public class var sceneDelegate: SceneDelegate {
         return UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
     }
     
     public var rootController: UIViewController {
-        return AppDelegate.sceneDelegate.window!.rootViewController as! ListController
+        return AppDelegate.sceneDelegate.window!.rootViewController as! CustomNavigationController
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

@@ -19,14 +19,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StockTableViewCell" id="wfh-q4-Kea" customClass="StockTableViewCell" customModule="trading_app" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wfh-q4-Kea" id="l18-pG-nVo">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFI-ac-uV5">
-                                            <rect key="frame" x="20" y="11" width="374" height="21"/>
+                                            <rect key="frame" x="20" y="11" width="374" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -74,7 +74,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDX-lF-UOv" userLabel="nameLabel">
-                                <rect key="frame" x="210" y="191" width="164" height="20.5"/>
+                                <rect key="frame" x="210" y="164" width="164" height="20.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
@@ -86,7 +86,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bod-V4-4eV" userLabel="priceLabel">
-                                <rect key="frame" x="210" y="271.5" width="164" height="20.5"/>
+                                <rect key="frame" x="210" y="244.5" width="164" height="20.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
@@ -110,7 +110,7 @@
                             <constraint firstItem="Bod-V4-4eV" firstAttribute="leading" secondItem="Xec-wN-75G" secondAttribute="trailing" constant="20" id="15F-5O-UoU"/>
                             <constraint firstItem="Xec-wN-75G" firstAttribute="top" secondItem="9VR-Xa-SOf" secondAttribute="top" constant="120" id="5dX-ov-0dm"/>
                             <constraint firstItem="9VR-Xa-SOf" firstAttribute="trailing" secondItem="NDX-lF-UOv" secondAttribute="trailing" constant="40" id="KzD-cN-oo0"/>
-                            <constraint firstItem="NDX-lF-UOv" firstAttribute="top" secondItem="Xec-wN-75G" secondAttribute="top" constant="27" id="Lgi-yv-7s4"/>
+                            <constraint firstItem="NDX-lF-UOv" firstAttribute="top" secondItem="Xec-wN-75G" secondAttribute="top" id="Lgi-yv-7s4"/>
                             <constraint firstItem="DEw-8Y-fqV" firstAttribute="leading" secondItem="9VR-Xa-SOf" secondAttribute="leading" constant="120" id="OVh-Kh-biY"/>
                             <constraint firstItem="9VR-Xa-SOf" firstAttribute="bottom" secondItem="DEw-8Y-fqV" secondAttribute="bottom" constant="200" id="ld4-GW-FdP"/>
                             <constraint firstItem="Xec-wN-75G" firstAttribute="leading" secondItem="9VR-Xa-SOf" secondAttribute="leading" constant="40" id="pCv-Zs-KWm"/>

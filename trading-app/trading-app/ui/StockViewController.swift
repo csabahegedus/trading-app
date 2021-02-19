@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import Kingfisher
 
 class StockViewController: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
@@ -28,8 +29,11 @@ class StockViewController: UIViewController {
     
     private func setupUI() {
         if let data = data {
-            //load logo to imgView
-            logoImageView.image = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
+            
+            logoImageView.kf.setImage(
+                with: URL(string: company?.logo ?? ""),
+                placeholder: UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
+            )
             logoImageView.tintColor = UIColor.gray
             
             nameLabel.attributedText = NSMutableAttributedString()
@@ -38,9 +42,9 @@ class StockViewController: UIViewController {
                 .blackHighlight(" \(data.id) ")
             
             priceLabel.attributedText = NSMutableAttributedString()
-                .gray(" snapshot\n ")
+                .gray(" snapshot \n")
                 .normal("price:  ")
-                .blackHighlight(" \(data.price) $ ")
+                .blackHighlight(" \(data.price.rounded(.awayFromZero)) $ ")
                 
             closeButton.setTitle("CLOSE", for: .normal)
             closeButton.setTitleColor(UIColor.white, for: .normal)

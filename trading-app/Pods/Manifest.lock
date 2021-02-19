@@ -1,4 +1,5 @@
 PODS:
+  - Kingfisher (6.1.1)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxStarscream (0.10):
@@ -9,21 +10,24 @@ PODS:
   - Starscream (3.1.1)
 
 DEPENDENCIES:
+  - Kingfisher (~> 6.0)
   - RxStarscream
 
 SPEC REPOS:
   trunk:
+    - Kingfisher
     - RxCocoa
     - RxStarscream
     - RxSwift
     - Starscream
 
 SPEC CHECKSUMS:
+  Kingfisher: 676d63307fbef6ed5d5ed400bff36983480d7500
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxStarscream: aa79e742c87e9bcdff218a1ebb59638f5174589e
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
 
-PODFILE CHECKSUM: 3df41c6a6027882156502e7fec35f5f6f0dede5e
+PODFILE CHECKSUM: 75484a5801b1f167f3c6d3c9cc7626d825012fdc
 
 COCOAPODS: 1.9.3
