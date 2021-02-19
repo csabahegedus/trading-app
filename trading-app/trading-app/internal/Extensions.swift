@@ -9,7 +9,7 @@ import UIKit
 
 
 extension UIAlertController{
-    class func showAlertViewWithTitle(_ title : String, message : String, buttonTitle: String, buttonAction:(()->())?, parentController:UIViewController){
+    class func showAlertViewWithTitle(_ title : String, message : String, buttonTitle: String, buttonAction:(()->())?, parentController:UIViewController) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: { (action) -> Void in
             buttonAction?()

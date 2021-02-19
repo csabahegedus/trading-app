@@ -12,9 +12,7 @@ import RxSwift
 
 
 class Communicator: NSObject {
-    
     static let shared = Communicator()
-    
 
     private let token = "c0n738f48v6v9lphnrjg"
     private let socketURL = URL(string: "wss://ws.finnhub.io?token=c0n738f48v6v9lphnrjg")
@@ -31,7 +29,6 @@ class Communicator: NSObject {
         }).disposed(by: disposeBag)
         
         socket.connect()
-
     }
     
     private func handleStatus(status: WebSocketEvent) {
@@ -46,13 +43,10 @@ class Communicator: NSObject {
             showError(error: error)
             break
         case .message(_):
-            //print( "RESPONSE (Message): \(msg) \n")
             break
         case .data(_):
-            //print(  "RESPONSE (Data): \(data) \n")
             break
         case .pong:
-            //print( "RESPONSE (Pong)")
             break
         }
     }
@@ -83,7 +77,7 @@ class Communicator: NSObject {
             }
             
             if let httpResponse = response as? HTTPURLResponse {
-                print("Status code : \(httpResponse.statusCode)")
+//                print("Status code : \(httpResponse.statusCode)")
             }
             
             guard let data = data else { return }
@@ -95,7 +89,9 @@ class Communicator: NSObject {
                     completed(json)
                 }
             }
-            catch {}
+            catch let error {
+                print("JSON decode error: \(error.localizedDescription)")
+            }
             
         }.resume()
     }
@@ -109,7 +105,7 @@ extension Communicator {
     }
 }
 
-extension Data {
+fileprivate extension Data {
     func toSelectedMap() -> [Int: ResponseData] {
         var dictionary = [Int: ResponseData]()
         do {
@@ -127,7 +123,7 @@ extension Data {
     }
 }
 
-extension String {
+fileprivate extension String {
     func toRequestQuery() -> String {
        return "{\"type\":\"subscribe\",\"symbol\":\"\(self)\"}"
     }
@@ -137,9 +133,3 @@ extension String {
     }
 }
 
-struct CompanyResponse: Decodable {
-    let name: String
-    let country: String
-    let logo: String
-    let ticker: String
-}

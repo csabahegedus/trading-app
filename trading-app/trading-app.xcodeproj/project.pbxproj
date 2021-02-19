@@ -20,6 +20,7 @@
 		07E19B1E25DF3E9100D01061 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E19B1D25DF3E9100D01061 /* Extensions.swift */; };
 		07E19B2325DF4D3100D01061 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E19B2225DF4D3100D01061 /* Settings.swift */; };
 		07E19B2625DF58E300D01061 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E19B2525DF58E300D01061 /* Constants.swift */; };
+		07E19B2E25DFEEC200D01061 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E19B2D25DFEEC200D01061 /* Responses.swift */; };
 		B03FA38EC10E70E235CA900A /* Pods_trading_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB16AB5542E2AED50B98E0F /* Pods_trading_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		07E19B1D25DF3E9100D01061 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		07E19B2225DF4D3100D01061 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		07E19B2525DF58E300D01061 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		07E19B2D25DFEEC200D01061 /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
 		0CB16AB5542E2AED50B98E0F /* Pods_trading_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trading_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6140497B67070EAD2F34BE3 /* Pods-trading-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trading-app.debug.xcconfig"; path = "Target Support Files/Pods-trading-app/Pods-trading-app.debug.xcconfig"; sourceTree = "<group>"; };
 		F69E36EFB3F5C8826ED9EADC /* Pods-trading-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trading-app.release.xcconfig"; path = "Target Support Files/Pods-trading-app/Pods-trading-app.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				07E19AE725DE9F3E00D01061 /* Communicator.swift */,
+				07E19B2D25DFEEC200D01061 /* Responses.swift */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				07E19B2325DF4D3100D01061 /* Settings.swift in Sources */,
 				07E19AF625DEF56800D01061 /* StockTableViewCell.swift in Sources */,
 				07E19AB725DE868100D01061 /* SceneDelegate.swift in Sources */,
+				07E19B2E25DFEEC200D01061 /* Responses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

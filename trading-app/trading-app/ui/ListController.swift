@@ -13,14 +13,9 @@ import RxStarscream
 
 class ListController: UIViewController {
     
-    
     private let disposeBag = DisposeBag()
     
     @IBOutlet var tableView: UITableView!
-    
-    private var list1: [ResponseData] = [
-        ResponseData(ca: [], price: 0.0, id: "AMZN", time: 0.0, value: 1)
-    ]
     
     private lazy var list: [ResponseData] = Settings.shared.load() ?? [] {
         didSet {
@@ -33,13 +28,9 @@ class ListController: UIViewController {
         setupUI()
         
         Communicator.shared.newData.subscribe(onNext: {[unowned self] (map: [Int: ResponseData]) in
-            print("new data map - \(map)")
+            //print("new data map - \(map)")
             map.keys.forEach { key in
-                // todo refresh constant symbol changes
-                if !self.list.isEmpty {
-                    self.list[key] = map[key]!
-                }
-                
+                self.list[key] = map[key]!
             }
             self.tableView.reloadData()
         })
@@ -81,28 +72,4 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
-
-struct FinnResponse: Codable {
-    var data: [ResponseData]
-    var type: String
-    
-}
-
-struct ResponseData: Codable, Hashable {
-    
-    var ca: [String]
-    var price: Float
-    var id: String
-    var time: Double
-    var value: Int
-    
-    private enum CodingKeys: String, CodingKey {
-        case ca = "c"
-        case price = "p"
-        case id = "s"
-        case time = "t"
-        case value = "v"
-    }
-}
-
 
