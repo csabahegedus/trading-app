@@ -77,7 +77,9 @@ class Communicator: NSObject {
             }
             
             if let httpResponse = response as? HTTPURLResponse {
-//                print("Status code : \(httpResponse.statusCode)")
+                if httpResponse.statusCode != 200 {
+                    print("Response status code: \(httpResponse.statusCode)")
+                }
             }
             
             guard let data = data else { return }

@@ -53,7 +53,17 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StockTableViewCell", for: indexPath) as! StockTableViewCell
         let item = list[indexPath.row]
-        cell.nameLabel.text = "\(item.id) \(item.price) $"
+        
+        cell.nameLabel.text = " \(item.id) "
+        
+        cell.priceLabel.text = "\(item.price.rounded(toPlaces: 2)) $"
+        
+        cell.rateLabel.text = " +29,23 "
+        cell.rateLabel.font = UIFont.systemFont(ofSize: 14)
+        cell.rateLabel.backgroundColor = UIColor.systemGreen
+        cell.rateLabel.layer.cornerRadius = 10
+        cell.rateLabel.clipsToBounds = true
+        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

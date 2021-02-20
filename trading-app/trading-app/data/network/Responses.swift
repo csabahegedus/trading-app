@@ -16,7 +16,7 @@ struct FinnResponse: Codable {
 struct ResponseData: Codable, Hashable {
     
     var ca: [String]
-    var price: Float
+    var price: Double
     var id: String
     var time: Double
     var value: Int

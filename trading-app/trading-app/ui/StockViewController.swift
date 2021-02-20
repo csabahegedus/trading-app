@@ -35,16 +35,26 @@ class StockViewController: UIViewController {
                 placeholder: UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
             )
             logoImageView.tintColor = UIColor.gray
+            logoImageView.layer.cornerRadius = 10
+            logoImageView.clipsToBounds = true
             
             nameLabel.attributedText = NSMutableAttributedString()
                 .bold("\(company?.name ?? "")\n\n")
-                .normal("symbol: ")
-                .blackHighlight(" \(data.id) ")
+                .blackHighlight(" \(data.id) \n")
+                .small(" symbol ")
+                
+            nameLabel.backgroundColor = UIColor.lightGray
+            nameLabel.layer.cornerRadius = 10
+            nameLabel.layer.shadowColor = UIColor.black.cgColor
+            nameLabel.layer.shadowRadius = 3.0
+            nameLabel.layer.shadowOpacity = 1.0
+            nameLabel.layer.shadowOffset = CGSize(width: 4, height: 4)
+            nameLabel.layer.masksToBounds = true
             
             priceLabel.attributedText = NSMutableAttributedString()
                 .gray(" snapshot \n")
                 .normal("price:  ")
-                .blackHighlight(" \(data.price.rounded(.awayFromZero)) $ ")
+                .blackHighlight(" \(data.price.rounded(toPlaces: 2)) $ ")
                 
             closeButton.setTitle("CLOSE", for: .normal)
             closeButton.setTitleColor(UIColor.white, for: .normal)

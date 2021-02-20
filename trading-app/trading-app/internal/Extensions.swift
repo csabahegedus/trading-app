@@ -18,6 +18,13 @@ extension UIAlertController{
     }
 }
 
+extension Double {
+    func rounded(toPlaces places: Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return ((self * divisor).rounded() / divisor)
+    }
+}
+
 extension NSMutableAttributedString {
     var fontSize: CGFloat { return 16 }
     var normalFont: UIFont { return UIFont.systemFont(ofSize: fontSize) }
@@ -26,6 +33,16 @@ extension NSMutableAttributedString {
     func normal(_ value:String) -> NSMutableAttributedString {
         let attributes:[NSAttributedString.Key : Any] = [
             .font : normalFont,
+        ]
+
+        self.append(NSAttributedString(string: value, attributes:attributes))
+        return self
+    }
+    
+    func small(_ value:String) -> NSMutableAttributedString {
+        let attributes:[NSAttributedString.Key : Any] = [
+            .font : UIFont.systemFont(ofSize: 10),
+            .foregroundColor : UIColor.darkText
         ]
 
         self.append(NSAttributedString(string: value, attributes:attributes))
@@ -54,7 +71,7 @@ extension NSMutableAttributedString {
 
     func blackHighlight(_ value:String) -> NSMutableAttributedString {
         let attributes:[NSAttributedString.Key : Any] = [
-            .font :  normalFont,
+            .font :  boldFont,
             .foregroundColor : UIColor.white,
             .backgroundColor : UIColor.black
 

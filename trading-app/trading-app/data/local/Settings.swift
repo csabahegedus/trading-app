@@ -23,7 +23,9 @@ class Settings: NSObject {
         guard let data = userDefaults.value(forKey: "data") as? Data else {
             var newList = [ResponseData]()
             Constants.Symbols.forEach { symbol in
-                newList.append(ResponseData(ca: [], price: 0.0, id: symbol, time: 0.0, value: 0))
+                newList.append(
+                    ResponseData(ca: [], price: 0.0, id: symbol, time: 0.0, value: 0)
+                )
             }
             return newList
             
