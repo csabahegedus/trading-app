@@ -58,6 +58,7 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
         
         cell.priceLabel.text = "\(item.price.rounded(toPlaces: 2)) $"
         
+        // todo calc correct rate
         cell.rateLabel.text = " +29,23 "
         cell.rateLabel.font = UIFont.systemFont(ofSize: 14)
         cell.rateLabel.backgroundColor = UIColor.systemGreen

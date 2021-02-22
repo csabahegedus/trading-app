@@ -13,7 +13,7 @@ class StockViewController: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var dismissButton: UIButton!
     
     private let disposeBag = DisposeBag()
     
@@ -56,11 +56,12 @@ class StockViewController: UIViewController {
                 .normal("price:  ")
                 .blackHighlight(" \(data.price.rounded(toPlaces: 2)) $ ")
                 
-            closeButton.setTitle("CLOSE", for: .normal)
-            closeButton.setTitleColor(UIColor.white, for: .normal)
-            closeButton.backgroundColor = UIColor.gray
-            closeButton.layer.cornerRadius = 10
-            closeButton.rx.tap.subscribe(onNext: { [unowned self] in
+            dismissButton.setTitle("DISMISS", for: .normal)
+            dismissButton.setTitleColor(UIColor.white, for: .normal)
+            dismissButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+            dismissButton.backgroundColor = UIColor.gray
+            dismissButton.layer.cornerRadius = 10
+            dismissButton.rx.tap.subscribe(onNext: { [unowned self] in
                 self.dismiss(animated: true, completion: nil)
             }).disposed(by: disposeBag)
         }

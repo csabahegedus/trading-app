@@ -13,10 +13,9 @@ import RxSwift
 
 class Communicator: NSObject {
     static let shared = Communicator()
+    private let urlComposer = URLComposer()
 
-    private let token = "c0n738f48v6v9lphnrjg"
-    private let socketURL = URL(string: "wss://ws.finnhub.io?token=c0n738f48v6v9lphnrjg")
-    private lazy var socket = WebSocket(url: socketURL!)
+    private lazy var socket = WebSocket(url: urlComposer.socketURL())
     private lazy var session = URLSession.shared
     
     private let disposeBag = DisposeBag()
@@ -96,6 +95,20 @@ class Communicator: NSObject {
             }
             
         }.resume()
+    }
+}
+
+
+struct URLComposer {
+    private let token = "c0n738f48v6v9lphnrjg"
+    private let socket = "wss://ws.finnhub.io"
+    private let base = "https://finnhub.io/api/v1/stock/profile2"
+    
+    func companyURL(symbol: String) -> URL {
+        return URL(string: "\(base)?symbol=\(symbol)&token=\(token)")!
+    }
+    func socketURL() -> URL {
+        return URL(string: "\(socket)?token=\(token)")!
     }
 }
 

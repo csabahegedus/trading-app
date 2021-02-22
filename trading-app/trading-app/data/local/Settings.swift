@@ -28,7 +28,6 @@ class Settings: NSObject {
                 )
             }
             return newList
-            
         }
         let list = try! JSONDecoder().decode([ResponseData].self, from: data)
         return list

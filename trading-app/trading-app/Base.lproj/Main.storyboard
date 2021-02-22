@@ -119,7 +119,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEw-8Y-fqV" userLabel="closeButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEw-8Y-fqV" userLabel="dismissButton">
                                 <rect key="frame" x="120" y="618" width="174" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="scz-H1-HY2"/>
@@ -145,7 +145,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="closeButton" destination="DEw-8Y-fqV" id="HQS-Ei-9IZ"/>
+                        <outlet property="dismissButton" destination="DEw-8Y-fqV" id="HQS-Ei-9IZ"/>
                         <outlet property="logoImageView" destination="Xec-wN-75G" id="eNw-JF-aMg"/>
                         <outlet property="nameLabel" destination="NDX-lF-UOv" id="Pt3-Kz-0zA"/>
                         <outlet property="priceLabel" destination="Bod-V4-4eV" id="O8D-mC-6pV"/>
