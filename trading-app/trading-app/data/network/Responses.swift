@@ -37,11 +37,17 @@ struct ResponseData: Codable, Hashable, Equatable {
 
 extension ResponseData {
     var rate: String {
+        if (lastPrice == 0) {
+            return " - "
+        }
         let rate = price - lastPrice
         return (rate >= 0) ? "+\(rate.rounded(toPlaces: 2))" : "\(rate.rounded(toPlaces: 2))"
     }
     
     var rateColor: UIColor {
+        if (lastPrice == 0) {
+            return UIColor.systemGray
+        }
         return ((price - lastPrice) >= 0) ? UIColor.systemGreen : UIColor.systemRed
     }
 }
