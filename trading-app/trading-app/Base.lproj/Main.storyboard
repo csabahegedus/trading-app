@@ -38,20 +38,21 @@
                                             <rect key="frame" x="352.5" y="13" width="41.5" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="4wF-J6-i8z"/>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="NzD-9Z-ZF9"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8o-qV-Bcq" userLabel="priceLabel">
-                                            <rect key="frame" x="291" y="15" width="41.5" height="20.5"/>
+                                            <rect key="frame" x="272.5" y="15" width="41.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="jWX-hZ-sIL" firstAttribute="leading" secondItem="n8o-qV-Bcq" secondAttribute="trailing" constant="20" id="7fZ-Qd-Jrz"/>
+                                        <constraint firstAttribute="trailing" secondItem="n8o-qV-Bcq" secondAttribute="trailing" constant="100" id="7fZ-Qd-Jrz"/>
                                         <constraint firstItem="n8o-qV-Bcq" firstAttribute="centerY" secondItem="l18-pG-nVo" secondAttribute="centerY" id="AfW-Ox-PIq"/>
                                         <constraint firstItem="n8o-qV-Bcq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gFI-ac-uV5" secondAttribute="trailing" constant="8" symbolic="YES" id="BC0-zx-THM"/>
                                         <constraint firstItem="jWX-hZ-sIL" firstAttribute="centerY" secondItem="l18-pG-nVo" secondAttribute="centerY" id="VIn-oI-HdL"/>
