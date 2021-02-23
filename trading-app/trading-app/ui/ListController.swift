@@ -30,7 +30,9 @@ class ListController: UIViewController {
         Communicator.shared.newData.subscribe(onNext: {[unowned self] (map: [Int: ResponseData]) in
             //print("new data map - \(map)")
             map.keys.forEach { key in
+                let lastPrice = self.list[key].price
                 self.list[key] = map[key]!
+                self.list[key].lastPrice = lastPrice
             }
             self.tableView.reloadData()
         })
@@ -59,9 +61,9 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
         cell.priceLabel.text = "\(item.price.rounded(toPlaces: 2)) $"
         
         // todo calc correct rate
-        cell.rateLabel.text = " +29,23 "
+        cell.rateLabel.text = " \(item.rate) "
+        cell.rateLabel.backgroundColor = item.rateColor
         cell.rateLabel.font = UIFont.systemFont(ofSize: 14)
-        cell.rateLabel.backgroundColor = UIColor.systemGreen
         cell.rateLabel.layer.cornerRadius = 10
         cell.rateLabel.clipsToBounds = true
         

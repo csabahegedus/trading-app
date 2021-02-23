@@ -24,6 +24,7 @@ struct ResponseData: Codable, Hashable, Equatable {
     var symbol: String
     var time: Double
     var value: Int
+    var lastPrice: Double = 0
     
     private enum CodingKeys: String, CodingKey {
         case ca = "c"
@@ -32,9 +33,16 @@ struct ResponseData: Codable, Hashable, Equatable {
         case time = "t"
         case value = "v"
     }
+}
+
+extension ResponseData {
+    var rate: String {
+        let rate = price - lastPrice
+        return (rate >= 0) ? "+\(rate.rounded(toPlaces: 2))" : "\(rate.rounded(toPlaces: 2))"
+    }
     
     var rateColor: UIColor {
-        return UIColor.green
+        return ((price - lastPrice) >= 0) ? UIColor.systemGreen : UIColor.systemRed
     }
 }
 
