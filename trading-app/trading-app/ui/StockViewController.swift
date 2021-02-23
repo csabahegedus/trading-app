@@ -28,42 +28,40 @@ class StockViewController: UIViewController {
     }
     
     private func setupUI() {
-        if let data = data {
             
-            logoImageView.kf.setImage(
-                with: URL(string: company?.logo ?? ""),
-                placeholder: UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
-            )
-            logoImageView.tintColor = UIColor.gray
-            logoImageView.layer.cornerRadius = 10
-            logoImageView.clipsToBounds = true
+        logoImageView.kf.setImage(
+            with: URL(string: company?.logo ?? ""),
+            placeholder: UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
+        )
+        logoImageView.tintColor = UIColor.gray
+        logoImageView.layer.cornerRadius = 10
+        logoImageView.clipsToBounds = true
+        
+        nameLabel.attributedText = NSMutableAttributedString()
+            .bold("\(company?.name ?? "")\n\n")
+            .blackHighlight(" \(company?.ticker ?? "") \n")
+            .small(" symbol ")
             
-            nameLabel.attributedText = NSMutableAttributedString()
-                .bold("\(company?.name ?? "")\n\n")
-                .blackHighlight(" \(data.id) \n")
-                .small(" symbol ")
-                
-            nameLabel.backgroundColor = UIColor.lightGray
-            nameLabel.layer.cornerRadius = 10
-            nameLabel.layer.shadowColor = UIColor.black.cgColor
-            nameLabel.layer.shadowRadius = 3.0
-            nameLabel.layer.shadowOpacity = 1.0
-            nameLabel.layer.shadowOffset = CGSize(width: 4, height: 4)
-            nameLabel.layer.masksToBounds = true
+        nameLabel.backgroundColor = UIColor.lightGray
+        nameLabel.layer.cornerRadius = 10
+        nameLabel.layer.shadowColor = UIColor.black.cgColor
+        nameLabel.layer.shadowRadius = 3.0
+        nameLabel.layer.shadowOpacity = 1.0
+        nameLabel.layer.shadowOffset = CGSize(width: 4, height: 4)
+        nameLabel.layer.masksToBounds = true
+        
+        priceLabel.attributedText = NSMutableAttributedString()
+            .gray(" snapshot \n")
+            .normal("price:  ")
+            .blackHighlight(" \(data?.price.rounded(toPlaces: 2) ?? 0.0) $ ")
             
-            priceLabel.attributedText = NSMutableAttributedString()
-                .gray(" snapshot \n")
-                .normal("price:  ")
-                .blackHighlight(" \(data.price.rounded(toPlaces: 2)) $ ")
-                
-            dismissButton.setTitle("DISMISS", for: .normal)
-            dismissButton.setTitleColor(UIColor.white, for: .normal)
-            dismissButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-            dismissButton.backgroundColor = UIColor.gray
-            dismissButton.layer.cornerRadius = 10
-            dismissButton.rx.tap.subscribe(onNext: { [unowned self] in
-                self.dismiss(animated: true, completion: nil)
-            }).disposed(by: disposeBag)
-        }
+        dismissButton.setTitle("DISMISS", for: .normal)
+        dismissButton.setTitleColor(UIColor.white, for: .normal)
+        dismissButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        dismissButton.backgroundColor = UIColor.gray
+        dismissButton.layer.cornerRadius = 10
+        dismissButton.rx.tap.subscribe(onNext: { [unowned self] in
+            self.dismiss(animated: true, completion: nil)
+        }).disposed(by: disposeBag)
     }
 }

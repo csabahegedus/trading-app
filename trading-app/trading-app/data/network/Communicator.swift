@@ -127,7 +127,7 @@ fileprivate extension Data {
             let responseData = try JSONDecoder().decode(FinnResponse.self, from: self)
             print(responseData)
             for (index, symbol) in Constants.Symbols.enumerated() {
-                if let item = responseData.data.last(where: { $0.id == symbol }) {
+                if let item = responseData.data.last(where: { $0.symbol == symbol }) {
                     dictionary[index] = item
                 }
             }

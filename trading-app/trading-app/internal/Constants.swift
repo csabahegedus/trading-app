@@ -9,6 +9,6 @@ import Foundation
 
 class Constants {
     static let Symbols: [String] = [
-        "AAPL", "AMZN"
+        "AAPL", "AMZN", "CCL"
     ]
 }

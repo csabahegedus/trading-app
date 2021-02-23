@@ -54,7 +54,7 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StockTableViewCell", for: indexPath) as! StockTableViewCell
         let item = list[indexPath.row]
         
-        cell.nameLabel.text = " \(item.id) "
+        cell.nameLabel.text = " \(item.symbol) "
         
         cell.priceLabel.text = "\(item.price.rounded(toPlaces: 2)) $"
         
@@ -72,7 +72,7 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
         let stockViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StockViewController") as! StockViewController
         stockViewController.data = list[indexPath.row]
         
-        Communicator.shared.fetchData(for: list[indexPath.row].id) { [unowned self] company in
+        Communicator.shared.fetchData(for: list[indexPath.row].symbol) { [unowned self] company in
             if let company = company {
                 stockViewController.company = company
             }
